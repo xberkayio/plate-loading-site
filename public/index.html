@@ -6,39 +6,21 @@
     <title>Rus Kurumları Veri Girişi</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .button-wrapper {
-            position: relative;
-            width: 100%;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            z-index: 2;
+        #submitBtn {
+            background-color: #3498db !important;
+            color: white !important;
+            border: none !important;
+            padding: 12px 20px !important;
+            font-size: 16px !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            transition: background-color 0.3s !important;
+            display: block !important;
+            width: 100% !important;
         }
         
-        .custom-button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: block;
-            width: 100%;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .custom-button:hover {
-            background-color: #2980b9;
-        }
-        
-        .darkmode-ignore {
-            isolation: isolate;
-            position: relative;
-            z-index: 100;
-            color: inherit !important;
-            background-color: transparent !important;
+        #submitBtn:hover {
+            background-color: #2980b9 !important;
         }
     </style>
 </head>
@@ -46,7 +28,9 @@
     <div class="container">
         <h1>Rus Kurumları Veri Girişi</h1>
         
-        <form id="institutionForm">
+        <form id="institutionForm" name="russian-institutions" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="russian-institutions">
+            
             <div class="form-group">
                 <label for="plaka">Plaka Kodu:</label>
                 <input type="text" id="plaka" name="plaka" placeholder="Örn: TR06" required>
@@ -91,10 +75,7 @@
                 <span class="format-hint">Sadece alan adı yazın (http:// veya https:// eklemeden)</span>
             </div>
             
-            <!-- Buton için özel wrapper div -->
-            <div class="button-wrapper darkmode-ignore">
-                <button type="submit" id="submitBtn" class="custom-button">Gönder</button>
-            </div>
+            <button type="submit" id="submitBtn">Gönder</button>
         </form>
         
         <div id="message" class="message"></div>
@@ -105,7 +86,64 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('institutionForm');
+            form.addEventListener('submit', function(e) {
+            });
+            fetch('/data/russian_institutions.json')
+                .then(response => response.json())
+                .then(data => {
+                    displayInstitutions(data);
+                })
+                .catch(error => {
+                    console.error('Veri yüklenirken hata:', error);
+                });
+            
+            function displayInstitutions(data) {
+                const institutionsList = document.getElementById('institutionsList');
+                institutionsList.innerHTML = '';
+                
+                Object.keys(data).forEach(plaka => {
+                    const institutions = data[plaka];
+                    
+                    const plakaTitle = document.createElement('h3');
+                    plakaTitle.textContent = `${plaka} Bölgesi`;
+                    institutionsList.appendChild(plakaTitle);
+                    
+                    institutions.forEach(institution => {
+                        const card = document.createElement('div');
+                        card.className = 'institution-card';
+                        
+                        const typeTag = document.createElement('span');
+                        typeTag.className = 'tag';
+                        typeTag.textContent = institution.type;
+                        
+                        const name = document.createElement('h3');
+                        name.textContent = institution.name;
+                        
+                        const description = document.createElement('p');
+                        description.textContent = institution.description;
+                        
+                        const address = document.createElement('p');
+                        address.innerHTML = `<strong>Adres:</strong> ${institution.address}`;
+                        
+                        const website = document.createElement('p');
+                        website.innerHTML = `<strong>Website:</strong> <a href="https://${institution.website}" target="_blank">${institution.website}</a>`;
+                        
+                        card.appendChild(typeTag);
+                        card.appendChild(name);
+                        card.appendChild(description);
+                        card.appendChild(address);
+                        card.appendChild(website);
+                        
+                        institutionsList.appendChild(card);
+                    });
+                });
+            }
+        });
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
       function addDarkmodeWidget() {
@@ -124,12 +162,6 @@
         
         const darkmode = new Darkmode(options);
         darkmode.showWidget();
-        
-        window.addEventListener('darkmode', function(e) {
-          const button = document.getElementById('submitBtn');
-          button.style.backgroundColor = '#3498db';
-          button.style.color = 'white';
-        });
       }
       window.addEventListener('load', addDarkmodeWidget);
     </script>
