@@ -1,66 +1,50 @@
-const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
 
-exports.handler = async function(event, context) {
-    if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, body: JSON.stringify({ error: 'Method Not Allowed' }) };
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: 'Yalnizca POST isteği destekleniyor.' }),
+    };
+  }
+
+  try {
+    const newInstitution = JSON.parse(event.body);
+
+    const dataPath = path.join(__dirname, '../public/data/russian_institutions.json');
+
+    let data = {};
+    if (fs.existsSync(dataPath)) {
+      const fileContent = fs.readFileSync(dataPath, 'utf8');
+      data = JSON.parse(fileContent);
     }
-    
-    try {
-        const requestData = JSON.parse(event.body);
-        
-        const requiredFields = ['plaka', 'name', 'description', 'type', 'address', 'website'];
-        for (const field of requiredFields) {
-            if (!requestData[field]) {
-                return { statusCode: 400, body: JSON.stringify({ error: `${field} alanı gereklidir.` }) };
-            }
-        }
-        
-        const institutionData = {
-            ...requestData,
-            image: ""
-        };
-        
-        const repoOwner = process.env.GITHUB_OWNER;
-        const repoName = process.env.GITHUB_REPO;
-        const filePath = 'data/russian_institutions.json';
-        const token = process.env.GITHUB_TOKEN;
-        
-        const fileResponse = await axios.get(
-            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
-            { headers: { Authorization: `token ${token}` } }
-        );
-        
-        const content = Buffer.from(fileResponse.data.content, 'base64').toString();
-        const existingData = JSON.parse(content);
-        
-        if (!existingData[requestData.plaka]) {
-            existingData[requestData.plaka] = [];
-        }
-        existingData[requestData.plaka].push(institutionData);
-        
-        await axios.put(
-            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
-            {
-                message: `Yeni kurum eklendi: ${requestData.name}`,
-                content: Buffer.from(JSON.stringify(existingData, null, 2)).toString('base64'),
-                sha: fileResponse.data.sha
-            },
-            { headers: { Authorization: `token ${token}` } }
-        );
-        
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ 
-                message: 'Kurum başarıyla kaydedildi.',
-                data: institutionData
-            })
-        };
-    } catch (error) {
-        console.error('Hata:', error);
-        
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Sunucu hatası oluştu.' })
-        };
+
+    if (!data[newInstitution.plaka]) {
+      data[newInstitution.plaka] = [];
     }
+
+    data[newInstitution.plaka].push({
+      name: newInstitution.name,
+      description: newInstitution.description,
+      type: newInstitution.type,
+      address: newInstitution.address,
+      website: newInstitution.website,
+      image: newInstitution.image || ""
+    });
+
+    fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf8');
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Kurum başarıyla eklendi.' }),
+    };
+
+  } catch (error) {
+    console.error('Hata:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Sunucu hatası oluştu.' }),
+    };
+  }
 };
