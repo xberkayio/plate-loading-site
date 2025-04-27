@@ -1,29 +1,38 @@
 {
   "TR06": [
-    { 
-      "name": "Rus Evi Ankara Русский дом в Анкаре", 
-      "description": "Rossotrudniçestvo Türkiye Temsilciliği", 
-      "type": "Büyükelçilik", 
-      "address": "Rabindranath Tagore Cd. No:68, 06550 Çankaya/Ankara", 
+    {
+      "name": "Rus Evi Ankara Русский дом в Анкаре",
+      "description": "Rossotrudniçestvo Türkiye Temsilciliği",
+      "type": "Büyükelçilik",
+      "address": "Rabindranath Tagore Cd. No:68, 06550 Çankaya/Ankara",
       "website": "turkiye.rs.gov.ru",
       "image": "images/ruseviankara.png"
     },
-    { 
-      "name": "Rus Eğitim Enstitüsü", 
-      "description": "Rusça dil eğitimi ve kültürel etkinlikler düzenleyen eğitim kurumu.", 
-      "type": "Kültür", 
-      "address": "Ankara Merkez", 
+    {
+      "name": "Rus Eğitim Enstitüsü",
+      "description": "Rusça dil eğitimi ve kültürel etkinlikler düzenleyen eğitim kurumu.",
+      "type": "Kültür",
+      "address": "Ankara Merkez",
       "website": "rusedu.com.tr",
       "image": ""
     }
   ],
   "TR34": [
-    { 
-      "name": "Rusya Başkonsolosluğu İstanbul", 
-      "description": "İstanbul'daki Rusya Federasyonu Başkonsolosluğu", 
-      "type": "Konsolosluk", 
-      "address": "İstiklal Caddesi No: 443, Beyoğlu, İstanbul", 
+    {
+      "name": "Rusya Başkonsolosluğu İstanbul",
+      "description": "İstanbul'daki Rusya Federasyonu Başkonsolosluğu",
+      "type": "Konsolosluk",
+      "address": "İstiklal Caddesi No: 443, Beyoğlu, İstanbul",
       "website": "istanbul.mid.ru/tr/",
+      "image": ""
+    },
+    {
+      "plaka": "TR34",
+      "name": "asd",
+      "description": "asd",
+      "type": "Büyükelçilik",
+      "address": "asd",
+      "website": "asd",
       "image": ""
     }
   ]
