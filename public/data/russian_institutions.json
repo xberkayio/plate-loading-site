@@ -87,6 +87,15 @@
       "address": "Почтовый адрес: Necatibey caddesi 51/1B. Çinar apt. Kızılay/ Ankara, 06440, Türkiye",
       "website": "www.favoridans.com",
       "image": ""
+    },
+    {
+      "plaka": "TR06",
+      "name": "Посольство Российской Федерации в Турции  Rusya Büyükelçiliği Ankara",
+      "description": "Чрезвычайный и Полномочный Посол Российской Федерации в Турецкой Республике: Алексей Владимирович Ерхов (Alexei V. Erkhov)",
+      "type": "Büyükelçilik",
+      "address": "Почтовый адрес: Andrey Karlov Sokağı, No 5, Çankaya, Ankara 06692, Türkiye",
+      "website": "www.turkey.mid.ru",
+      "image": ""
     }
   ],
   "TR34": [
