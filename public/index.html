@@ -5,24 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rus Kurumları Veri Girişi</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .button-wrapper {
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+        
+        .custom-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .custom-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .darkmode-ignore {
+            isolation: isolate;
+            position: relative;
+            z-index: 100;
+            color: inherit !important;
+            background-color: transparent !important;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Rus Kurumları Veri Girişi</h1>
         
         <form id="institutionForm">
-            <div class="format-example">
-                <h3>Format Örnekleri</h3>
-                <div class="example-box">
-                    <p><strong>Plaka:</strong> TR06</p>
-                    <p><strong>Name:</strong> Rus Evi Ankara Русский дом в Анкаре</p>
-                    <p><strong>Description:</strong> Rossotrudniçestvo Türkiye Temsilciliği</p>
-                    <p><strong>Type:</strong> Büyükelçilik</p>
-                    <p><strong>Address:</strong> Rabindranath Tagore Cd. No:68, 06550 Çankaya/Ankara</p>
-                    <p><strong>Website:</strong> turkiye.rs.gov.ru</p>
-                </div>
-            </div>
-            
             <div class="form-group">
                 <label for="plaka">Plaka Kodu:</label>
                 <input type="text" id="plaka" name="plaka" placeholder="Örn: TR06" required>
@@ -67,7 +91,10 @@
                 <span class="format-hint">Sadece alan adı yazın (http:// veya https:// eklemeden)</span>
             </div>
             
-            <button type="submit" id="submitBtn">Gönder</button>
+            <!-- Buton için özel wrapper div -->
+            <div class="button-wrapper darkmode-ignore">
+                <button type="submit" id="submitBtn" class="custom-button">Gönder</button>
+            </div>
         </form>
         
         <div id="message" class="message"></div>
@@ -79,5 +106,32 @@
     </div>
     
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        const options = {
+          bottom: '32px',
+          right: '32px',
+          time: '0.5s',
+          mixColor: '#fff',
+          backgroundColor: '#fff',
+          buttonColorDark: '#100f2c',
+          buttonColorLight: '#fff',
+          saveInCookies: true,
+          label: '🌓',
+          autoMatchOsTheme: true
+        };
+        
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        window.addEventListener('darkmode', function(e) {
+          const button = document.getElementById('submitBtn');
+          button.style.backgroundColor = '#3498db';
+          button.style.color = 'white';
+        });
+      }
+      window.addEventListener('load', addDarkmodeWidget);
+    </script>
 </body>
 </html>
