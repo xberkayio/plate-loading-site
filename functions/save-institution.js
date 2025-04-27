@@ -1,57 +1,52 @@
-const fs = require('fs');
-const path = require('path');
+const axios = require('axios');
 
 exports.handler = async function(event, context) {
-    // Sadece POST isteklerini kabul et
     if (event.httpMethod !== 'POST') {
-        return {
-            statusCode: 405,
-            body: JSON.stringify({ error: 'Method Not Allowed' })
-        };
+        return { statusCode: 405, body: JSON.stringify({ error: 'Method Not Allowed' }) };
     }
     
     try {
-        // Request body'den veriyi al
         const requestData = JSON.parse(event.body);
         
-        // Gerekli alanların kontrolü
         const requiredFields = ['plaka', 'name', 'description', 'type', 'address', 'website'];
         for (const field of requiredFields) {
             if (!requestData[field]) {
-                return {
-                    statusCode: 400,
-                    body: JSON.stringify({ error: `${field} alanı gereklidir.` })
-                };
+                return { statusCode: 400, body: JSON.stringify({ error: `${field} alanı gereklidir.` }) };
             }
         }
         
-        // Boş image alanını ekle
         const institutionData = {
             ...requestData,
             image: ""
         };
         
-        // JSON dosya yolunu belirle
-        const jsonFilePath = path.join(__dirname, '../data/russian_institutions.json');
+        const repoOwner = process.env.GITHUB_OWNER;
+        const repoName = process.env.GITHUB_REPO;
+        const filePath = 'data/russian_institutions.json';
+        const token = process.env.GITHUB_TOKEN;
         
-        // Dosya var mı kontrol et, yoksa oluştur
-        let existingData = {};
-        try {
-            const fileContent = fs.readFileSync(jsonFilePath, 'utf8');
-            existingData = JSON.parse(fileContent);
-        } catch (error) {
-            console.log('Dosya bulunamadı veya okunamadı, yeni oluşturuluyor.');
-        }
+        const fileResponse = await axios.get(
+            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+            { headers: { Authorization: `token ${token}` } }
+        );
         
-        // Plaka kodu için array varsa ona ekle, yoksa oluştur
+        const content = Buffer.from(fileResponse.data.content, 'base64').toString();
+        const existingData = JSON.parse(content);
+        
         if (!existingData[requestData.plaka]) {
             existingData[requestData.plaka] = [];
         }
-        
         existingData[requestData.plaka].push(institutionData);
         
-        // Dosyaya yaz
-        fs.writeFileSync(jsonFilePath, JSON.stringify(existingData, null, 2));
+        await axios.put(
+            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+            {
+                message: `Yeni kurum eklendi: ${requestData.name}`,
+                content: Buffer.from(JSON.stringify(existingData, null, 2)).toString('base64'),
+                sha: fileResponse.data.sha
+            },
+            { headers: { Authorization: `token ${token}` } }
+        );
         
         return {
             statusCode: 200,
