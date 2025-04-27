@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rus Kurumları Veri Girişi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rus Kurumları Veri Girişi</h1>
+        
+        <form id="institutionForm">
+            <div class="form-group">
+                <label for="plaka">Plaka Kodu:</label>
+                <input type="text" id="plaka" name="plaka" placeholder="Örn: TR06" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Kurum Adı:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Açıklama:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="type">Tür:</label>
+                <select id="type" name="type" required>
+                    <option value="">Seçiniz</option>
+                    <option value="Büyükelçilik">Büyükelçilik</option>
+                    <option value="Konsolosluk">Konsolosluk</option>
+                    <option value="Kültür">Kültür</option>
+                    <option value="Ticaret">Ticaret</option>
+                    <option value="Üniversite">Üniversite</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Adres:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="website">Website:</label>
+                <input type="text" id="website" name="website" required>
+            </div>
+            
+            <button type="submit" id="submitBtn">Gönder</button>
+        </form>
+        
+        <div id="message" class="message"></div>
+        
+        <div class="existing-data">
+            <h2>Mevcut Kurumlar</h2>
+            <div id="institutionsList"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
