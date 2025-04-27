@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const messageDiv = document.getElementById('message');
   const institutionsList = document.getElementById('institutionsList');
   
-  // Mevcut kurumları yükle
   loadInstitutions();
   
-  // Form gönderimi
   form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (response.ok) {
               showMessage('Kurum başarıyla kaydedildi!', 'success');
               form.reset();
-              loadInstitutions(); // Listeyi güncelle
+              loadInstitutions();
           } else {
               showMessage(`Hata: ${result.error}`, 'error');
           }
@@ -42,18 +40,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
   
-  // Mesaj gösterme fonksiyonu
   function showMessage(text, type) {
       messageDiv.textContent = text;
       messageDiv.className = `message ${type}`;
       
-      // 5 saniye sonra mesajı gizle
       setTimeout(() => {
           messageDiv.style.display = 'none';
       }, 5000);
   }
   
-  // Kurumları JSON dosyasından yükle
   async function loadInstitutions() {
       try {
           const response = await fetch('/data/russian_institutions.json');
@@ -66,20 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
   
-  // Kurumları ekranda göster
   function displayInstitutions(data) {
       institutionsList.innerHTML = '';
       
-      // Her plaka kodu için kurumları listele
       Object.keys(data).forEach(plaka => {
           const institutions = data[plaka];
           
-          // Başlık ekle
           const plakaTitle = document.createElement('h3');
           plakaTitle.textContent = `${plaka} Bölgesi`;
           institutionsList.appendChild(plakaTitle);
           
-          // Kurumları listele
           institutions.forEach(institution => {
               const card = document.createElement('div');
               card.className = 'institution-card';
