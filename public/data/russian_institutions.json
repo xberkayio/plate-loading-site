@@ -169,6 +169,15 @@
       "address": "Адрес: Girne Mah., Başöğretmen Cad, 15/A1, Maltepe, İstanbul",
       "website": "www.istanbulruskom.org",
       "image": ""
+    },
+    {
+      "plaka": "TR34",
+      "name": "Генеральное Консульство Российской Федерации в Стамбуле  Rusya Federasyonu İstanbul Başkonsolosluğu",
+      "description": "Генеральный консул России в Стамбуле: Андрей Леонидович Подъелышев (Andrey L. Podelyshev)",
+      "type": "Konsolosluk",
+      "address": "Почтовый адрес: İstiklal Caddesi, 219-225a, 34430, Beyoğlu, İstanbul, Türkiye",
+      "website": "www.istanbul.mid.ru",
+      "image": ""
     }
   ],
   "TR01": [
