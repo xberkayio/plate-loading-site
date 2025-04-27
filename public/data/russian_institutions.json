@@ -238,6 +238,15 @@
       "address": "Почтовый адрес: Bostanli Mah. Bestekar Sadi Hoşses Sokak No:17 D:1, İzmir , Türkiye",
       "website": "www.russkiyizmir.com",
       "image": ""
+    },
+    {
+      "plaka": "TR35",
+      "name": "Почетное Консульство Российской Федерации в Измире  Rusya Federasyonu İzmir",
+      "description": "Почетный консул Российской Федерации: Рыза Эрай Гюрлер (Rıza Eray Gürler)",
+      "type": "Konsolosluk",
+      "address": "Почтовый адрес: Fatih Cad.,No 69, Çamdibi, İzmir,Türkiye",
+      "website": "_",
+      "image": ""
     }
   ],
   "TR09": [
