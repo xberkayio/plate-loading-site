@@ -263,5 +263,16 @@
       "website": "_",
       "image": ""
     }
+  ],
+  "TR61": [
+    {
+      "plaka": "TR61",
+      "name": "Генеральное Консульство Российской Федерации в Трабзоне  Rusya Federasyonu Trabzon Başkonsolosluğu",
+      "description": "Генеральный консул России в Трабзоне: Валерий Борисович Тихонов (Valeriy B. Tikhonov)",
+      "type": "Konsolosluk",
+      "address": "Почтовый адрес: Refik Cesur Cad. 6, Ortahisar Mh., Trabzon, 61030, Türkiye",
+      "website": "www.trabzon.mid.ru",
+      "image": ""
+    }
   ]
 }
