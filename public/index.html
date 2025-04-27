@@ -11,19 +11,34 @@
         <h1>Rus Kurumları Veri Girişi</h1>
         
         <form id="institutionForm">
+            <div class="format-example">
+                <h3>Format Örnekleri</h3>
+                <div class="example-box">
+                    <p><strong>Plaka:</strong> TR06</p>
+                    <p><strong>Name:</strong> Rus Evi Ankara Русский дом в Анкаре</p>
+                    <p><strong>Description:</strong> Rossotrudniçestvo Türkiye Temsilciliği</p>
+                    <p><strong>Type:</strong> Büyükelçilik</p>
+                    <p><strong>Address:</strong> Rabindranath Tagore Cd. No:68, 06550 Çankaya/Ankara</p>
+                    <p><strong>Website:</strong> turkiye.rs.gov.ru</p>
+                </div>
+            </div>
+            
             <div class="form-group">
                 <label for="plaka">Plaka Kodu:</label>
                 <input type="text" id="plaka" name="plaka" placeholder="Örn: TR06" required>
+                <span class="format-hint">Örnek: TR06, TR34, TR01</span>
             </div>
             
             <div class="form-group">
                 <label for="name">Kurum Adı:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Örn: Rus Evi Ankara Русский дом в Анкаре" required>
+                <span class="format-hint">Türkçe ve Rusça isim birlikte yazılabilir</span>
             </div>
             
             <div class="form-group">
                 <label for="description">Açıklama:</label>
-                <textarea id="description" name="description" required></textarea>
+                <textarea id="description" name="description" placeholder="Örn: Rossotrudniçestvo Türkiye Temsilciliği" required></textarea>
+                <span class="format-hint">Kurumun kısa açıklaması</span>
             </div>
             
             <div class="form-group">
@@ -37,16 +52,19 @@
                     <option value="Üniversite">Üniversite</option>
                     <option value="Diğer">Diğer</option>
                 </select>
+                <span class="format-hint">Listeden uygun kurumsal türü seçin</span>
             </div>
             
             <div class="form-group">
                 <label for="address">Adres:</label>
-                <textarea id="address" name="address" required></textarea>
+                <textarea id="address" name="address" placeholder="Örn: Rabindranath Tagore Cd. No:68, 06550 Çankaya/Ankara" required></textarea>
+                <span class="format-hint">Tam adres bilgisi (sokak, numara, mahalle, ilçe, il)</span>
             </div>
             
             <div class="form-group">
                 <label for="website">Website:</label>
-                <input type="text" id="website" name="website" required>
+                <input type="text" id="website" name="website" placeholder="Örn: turkiye.rs.gov.ru" required>
+                <span class="format-hint">Sadece alan adı yazın (http:// veya https:// eklemeden)</span>
             </div>
             
             <button type="submit" id="submitBtn">Gönder</button>
