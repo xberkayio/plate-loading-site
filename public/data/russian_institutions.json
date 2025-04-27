@@ -218,6 +218,15 @@
       "address": "Адрес: Molla Yusuf Mah., Hürriyet Cad. No:25, 07070 Konyaaltı/Antalya, Türkiye",
       "website": "www.rusdernek.com",
       "image": ""
+    },
+    {
+      "plaka": "TR07",
+      "name": "Генеральное Консульство Российской Федерации в Анталье  Rusya Federasyonu Antalya Başkonsolosluğu",
+      "description": "Генеральный консул России в Анталье: Олег Васильевич Рогоза (Oleg V. Rogoza)",
+      "type": "Konsolosluk",
+      "address": "Почтовый адрес: Kırıçarslan Mah., Park Sk., No.30, Muratpaşa/Antalya, 7100, Türkiye",
+      "website": "www.antalya.mid.ru",
+      "image": ""
     }
   ],
   "TR35": [
