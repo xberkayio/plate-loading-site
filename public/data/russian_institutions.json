@@ -141,6 +141,15 @@
       "address": "Адрес: Orta Doğu Teknik Üniversitesi, Modern Diller Bölümü, 06531 Ankara, Türkiye",
       "website": "www.mld.metu.edu.tr",
       "image": ""
+    },
+    {
+      "plaka": "TR06",
+      "name": "Университет «Атылым»  T.C.  Atılım Üniversitesi",
+      "description": "Русский язык как иностранный преподается в Университете «Атылым» с 2010 года на уровнях А1 и А2 по 3 академических часа в неделю. Количество изучающих русский язык: 20-30 студентов. Руководитель: заведующая отделением иностранных языков, Фериде Гювен (Feride Güven)",
+      "type": "Üniversite",
+      "address": "Почтовый адрес: Atılım Üniversitesi, Kızılcaşar Mah., 06836 İncek, Gölbaşı/Ankara Türkiye",
+      "website": "www.atilim.edu.tr",
+      "image": ""
     }
   ],
   "TR34": [
