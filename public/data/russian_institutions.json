@@ -353,6 +353,15 @@
       "address": "Почтовый адрес: Kestel Mahallesi, Konya Çimento Caddesi, No:80, Alanya, Antalya/Türkiye",
       "website": "https://www.alanya.edu.tr",
       "image": ""
+    },
+    {
+      "plaka": "TR07",
+      "name": "Научный университет Анталии  Antalya Bilim Üniversitesi",
+      "description": "Русский язык как иностранный преподается в Научном университете Анталии на уров нях А1 и А2. Количество изучающих русский язык: 100 студентов. Руководитель: ректор, д-р наук, проф. Исмаил Юксек (Prof. Dr. İsmail Yüksek); Преподаватель русского языка: Екатерина Чичерина (Ekaterina Chicherina)",
+      "type": "Üniversite",
+      "address": "Адрес: Çıplaklı Mah. Akdeniz Bulvarı No:290 A Döşemealtı/ Antalya, Türkiye",
+      "website": "antalya.edu.tr",
+      "image": ""
     }
   ],
   "TR35": [
