@@ -295,6 +295,15 @@
       "address": "Почтовый адрес: İstiklal Caddesi, 219-225a, 34430, Beyoğlu, İstanbul, Türkiye",
       "website": "www.istanbul.mid.ru",
       "image": ""
+    },
+    {
+      "plaka": "TR34",
+      "name": "Стамбульский университет «Айдын» , профессиональный колледж  «Анадолу БИЛ», кафедра практического перевода  İstanbul Aydın Üniversitesi, Anadolu BİL Yüksekokulu,  Uygulamalı Rusça ve Çevirmenlik Bölümü",
+      "description": "На отделении русско-турецкого перевода изучаются различные дисциплины, связанные с русским языком: фонетика, грамматика, разговорный язык, русская литература, культура и история. Постоянно действует клуб разговорного русского языка. Количество изучающих русский язык: 250 студентов. Руководитель: заведующая кафедрой практического перевода, д-р филол. наук, Жале Замановна Джошкун (Dr. Jale Coşkun)",
+      "type": "Üniversite",
+      "address": "Почтовый адрес: Florya Yerleşkesi, Beşyol Mah. İnönü Cad. No: 38, Sefaköy-Küçükçekmece/İstanbul P.K.: 34295, Türkiye",
+      "website": "www.aydin.edu.tr",
+      "image": ""
     }
   ],
   "TR01": [
