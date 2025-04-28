@@ -186,6 +186,15 @@
       "address": "Почтовый адрес: Bahçekapı mahallesi, Okul sokak No:11 06790 Etimesgut/Ankara, Türkiye",
       "website": "www.thk.edu.tr",
       "image": ""
+    },
+    {
+      "plaka": "TR06",
+      "name": "Университет «Хаджеттепе»  Hacettepe Üniversitesi",
+      "description": "Русский язык как иностранный преподаётся в качестве второго иностранного языка и является предметом по выбору. Количество изучающих русский язык: 150-200 студентов. Руководитель: директор Высшей школы иностранных языков Налан Бюйюккантарджиоулу (Nalan Büyükkantarcıoğlu)",
+      "type": "Üniversite",
+      "address": "Почтовый адрес: Hacettepe Üniversitesi, Beytepe, Çankaya/Ankara, Türkiye",
+      "website": "www.hacettepe.edu.tr",
+      "image": ""
     }
   ],
   "TR34": [
