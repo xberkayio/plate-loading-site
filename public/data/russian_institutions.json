@@ -424,6 +424,15 @@
       "address": "Почтовый адрес: Armutalan mah. Belediye cad. #8, kat/3 48700, Marmaris/Muğla, Türkiye",
       "website": "_",
       "image": ""
+    },
+    {
+      "plaka": "TR48",
+      "name": "Университет им. Сыткы Кочмана в Мугле  Muğla Sıtkı Koçman Üniversitesi",
+      "description": "Русский язык как иностранный преподается в Университете им. Сыткы Кочмана с 1992 года в качестве элективной дисциплины. Количество изучающих русский язык: приблизительно 1000 студентов. Руководитель: заведующий отделением тюркских диалектов и литератур северо-западного региона д-р наук, доц. Кенан Коч (Doç. Dr. Kenan Koç)",
+      "type": "Üniversite",
+      "address": "Почтовый адрес: Muğla Sıtkı Koçman Üniversitesi Rektörlüğü, 48000 Kötekli/Muğla, Türkiye",
+      "website": "www.mu.edu.tr",
+      "image": ""
     }
   ],
   "TR61": [
