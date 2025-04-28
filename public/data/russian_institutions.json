@@ -358,6 +358,15 @@
       "address": "Почтовый адрес: Nişantepe Mah., Orman Sok., 34794 Çekmeköy/İstanbul, Türkiye",
       "website": "www.ozyegin.edu.tr;  www.ozyegin.edu.tr/en/modern-languages-program",
       "image": ""
+    },
+    {
+      "plaka": "TR34",
+      "name": "Университет MEF  MEF Üniversitesi",
+      "description": "Русский язык преподается в Университете MEF как дополнительная факультативная дис циплина по 3 часа в неделю на протяжении 4-х семестров. После прохождения курса студенты получают знания, соответствующие элементарному уровню образовательного стандарта для иностранцев. Количество изучающих русский язык: 70 студентов. Руководитель: директор Высшей школы иностранных языков Салли Гэйфорд (Sally Gayford); Преподаватель русского языка: Римма Алексеевна Николаева (Rimma Nikolaeva)",
+      "type": "Üniversite",
+      "address": "Почтовый адрес: Ayazağa Cad. No. 4, 34396 Maslak, Sarıyer/İstanbul, Türkiye",
+      "website": "www.mef.edu.tr",
+      "image": ""
     }
   ],
   "TR01": [
