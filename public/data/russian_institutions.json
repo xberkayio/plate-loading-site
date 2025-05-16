@@ -1060,5 +1060,16 @@
       "website": "-",
       "image": ""
     }
+  ],
+  "TR00": [
+    {
+      "plaka": "TR00",
+      "name": "Правовая поддержка соотечественников",
+      "description": "Контактный адрес: av.elfiyakanbekova@gmail.com",
+      "type": "Dernekler",
+      "address": "-",
+      "website": "-",
+      "image": ""
+    }
   ]
 }
