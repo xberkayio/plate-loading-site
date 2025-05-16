@@ -966,5 +966,16 @@
       "website": "-",
       "image": ""
     }
+  ],
+  "TR41": [
+    {
+      "plaka": "TR41",
+      "name": "Ассоциация любителей русского языка и культуры",
+      "description": "Контактный адрес: rusdernekkocaeli@gmail.com",
+      "type": "Dernekler",
+      "address": "Коджаэли",
+      "website": "-",
+      "image": ""
+    }
   ]
 }
