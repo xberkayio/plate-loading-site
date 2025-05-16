@@ -321,6 +321,15 @@
       "address": "Почтовый адрес: на стадии смены юридического адреса",
       "website": "www.rukemcenter.com",
       "image": ""
+    },
+    {
+      "plaka": "TR06",
+      "name": "asd",
+      "description": "asd",
+      "type": "Okul",
+      "address": "asd",
+      "website": "asd",
+      "image": ""
     }
   ],
   "TR34": [
