@@ -955,5 +955,16 @@
       "website": "-",
       "image": ""
     }
+  ],
+  "TR50": [
+    {
+      "plaka": "TR50",
+      "name": "Каппадокийская русская ассоциация культуры",
+      "description": "Контактный адрес: helinym@gmail.com",
+      "type": "Dernekler",
+      "address": "Невшехир",
+      "website": "-",
+      "image": ""
+    }
   ]
 }
