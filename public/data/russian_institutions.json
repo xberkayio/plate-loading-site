@@ -935,5 +935,16 @@
       "website": "www.cyprusrusschool.com",
       "image": ""
     }
+  ],
+  "TR16": [
+    {
+      "plaka": "TR16",
+      "name": "Центр русской культуры Бурсы",
+      "description": "Контактный адрес: liudmila.mutlu@gmail.com",
+      "type": "Dernekler",
+      "address": "Бурса",
+      "website": "-",
+      "image": ""
+    }
   ]
 }
